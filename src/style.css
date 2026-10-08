@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    color-scheme: dark;
+  }
+  body {
+    @apply min-h-screen bg-brand-bg text-gray-100;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-gray-800 bg-brand-surface p-6;
+  }
+  .btn {
+    @apply inline-flex min-h-touch min-w-touch items-center justify-center gap-2 rounded-xl px-5 py-3 text-base transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .btn-primary {
+    @apply btn bg-brand-accent font-bold text-black hover:brightness-95;
+  }
+  .btn-secondary {
+    @apply btn border border-gray-700 bg-brand-surface font-semibold text-gray-100 hover:border-gray-500;
+  }
+  .btn-ghost {
+    @apply btn font-semibold text-gray-300 hover:text-white;
+  }
+  .btn-icon {
+    @apply inline-flex h-12 w-12 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur transition active:scale-95;
+  }
+  .label {
+    @apply mb-2 block text-sm font-semibold text-gray-300;
+  }
+  .input {
+    @apply min-h-touch w-full rounded-xl border border-gray-700 bg-brand-bg px-4 py-3 text-base text-gray-100 placeholder-gray-500 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+}
+
+.safe-top {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+.safe-bottom {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
